@@ -12,25 +12,25 @@ except FileNotFoundError:
     print("No config.json found")
 
 async def setup(bot):
-    @bot.command(name="ban")
-    async def ban(ctx, member: discord.Member, *, msg):
+    @bot.command(name="kick")
+    async def kick(ctx, member: discord.Member, *, msg):
         role = discord.utils.get(ctx.guild.roles, id=admin_role_id)
         if role in ctx.author.roles:
             log_channel = bot.get_channel(logs_channel_id)
             mod_channel = bot.get_channel(moderation_channel_id)
 
-            embed = discord.Embed(title="Member Banned", colour=discord.Colour.red())
+            embed = discord.Embed(title="Member Kicked", colour=discord.Colour.red())
             embed.add_field(name="Member", value=member.mention, inline=False)
             embed.add_field(name="Reason", value=msg, inline=False)
             embed.add_field(name="Moderator", value=ctx.author.mention, inline=False)
             await log_channel.send(embed=embed)
 
-            embed = discord.Embed(title="Member Banned", colour=discord.Colour.red())
+            embed = discord.Embed(title="Member Kicked", colour=discord.Colour.red())
             embed.add_field(name="Member", value=member.mention, inline=False)
             embed.add_field(name="Reason", value=msg, inline=False)
             await mod_channel.send(embed=embed)
 
-            await member.ban(reason=msg)
+            await member.kick(reason=msg)
 
         else:
             await ctx.send("You don't have permission to use this command.")

@@ -18,6 +18,8 @@ async def on_ready():
     await bot.load_extension("events.logs")
     await bot.load_extension("commands.rate")
     await bot.load_extension("commands.ban")
+    await bot.load_extension("commands.kick")
+    await bot.load_extension("commands.warn")
     print("Bot is ready")   
 
 bot.run(token)
