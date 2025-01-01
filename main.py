@@ -22,6 +22,7 @@ async def on_ready():
     await bot.load_extension("commands.warn")
     await bot.load_extension("music.music")
     await bot.load_extension("music.stop")
+    await bot.load_extension("commands.presence")
     print("Bot is ready")   
 
 bot.run(token)
