@@ -1,5 +1,7 @@
 # Staff System Bot
 
+This bot is currently in development, but feel free to do a pull request with your own ideas.
+
 <h2>The best bot for administrating your discord server</h2>
 
 <h3>✅ Rating System</h3>
