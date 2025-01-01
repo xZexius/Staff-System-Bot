@@ -20,6 +20,8 @@ async def on_ready():
     await bot.load_extension("commands.ban")
     await bot.load_extension("commands.kick")
     await bot.load_extension("commands.warn")
+    await bot.load_extension("music.music")
+    await bot.load_extension("music.stop")
     print("Bot is ready")   
 
 bot.run(token)
