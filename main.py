@@ -17,6 +17,7 @@ bot = commands.Bot(command_prefix=prefix, help_command=None, intents=discord.Int
 async def on_ready():
     await bot.load_extension("events.logs")
     await bot.load_extension("commands.rate")
+    await bot.load_extension("commands.ban")
     print("Bot is ready")   
 
 bot.run(token)
